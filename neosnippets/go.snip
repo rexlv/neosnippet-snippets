@@ -17,6 +17,15 @@ snippet     func
 abbr        func ...() { ... }
 alias fn
 options     head
+  // $1 
+  func ${1:fname}(${2}) ${3:int }{
+    ${0:TARGET:return }
+  }
+  
+snippet     fn
+abbr        func ...() { ... }
+alias fn
+options     head
   func ${1:fname}(${2}) ${3:int }{
     ${0:TARGET:return }
   }
@@ -107,7 +116,7 @@ options     head
   case ${1:#:condition}:
     ${2:TARGET}
 
-snippet     funcTest
+snippet     test
 abbr        func Test... (t *testing.T) { ... }
 options     head
   func Test${1} (${2:t *testing.T}) {
@@ -116,7 +125,7 @@ options     head
     }
   }
 
-snippet     funcbench
+snippet     bench
 abbr        func Bench... (b *testing.B) { ... }
 options     head
   func Bench${1} (${2:b *testing.B}) {
